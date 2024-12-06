@@ -1,0 +1,45 @@
+{% extends 'base_a.html' %}
+
+{% block content %}
+
+
+<h3>
+	
+{{msg}}
+	
+	<h3>
+	View Performance Metrics<br><br>
+</h2>
+</h3>
+<center>
+				<table id="tab" width="95%">
+<tr>
+	<th width="10%">Sno<th><center>Dataset<th><center>Algorithm<th><center>Accuracy
+		<th><center>Precision
+			<th><center>Recall
+				<th><center>F1-score
+
+				{% for d in data %}
+<tr><td>{{forloop.counter}}<td><center>{{d.dataset}}<td><center>{{d.algo}}<td><center>{{d.acc}}
+	<td><center>{{d.prec}}
+		<td><center>{{d.recall}}
+			<td><center>{{d.f1}}
+
+
+</tr>
+				{% endfor %}
+</table>
+
+<center><br><br>
+
+	
+	<a href="{% url 'viewgraph' cat='acc_v'%}"><h2>Accuracy <i class="fa fa-bar-chart" aria-hidden="true"></i></h1></a><br>
+		<a href="{% url 'viewgraph' cat='pre_v'%}"><h2>Precision <i class="fa fa-bar-chart" aria-hidden="true"></i></h1></a><br>
+			<a href="{% url 'viewgraph' cat='rec_v'%}"><h2>Recall <i class="fa fa-bar-chart" aria-hidden="true"></i></h1></a><br>
+				<a href="{% url 'viewgraph' cat='f1_v'%}"><h2>F1-score <i class="fa fa-bar-chart" aria-hidden="true"></i></h1></a>
+				</center>
+	
+
+<center><br><br>
+
+{% endblock %}

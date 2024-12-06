@@ -1,0 +1,21 @@
+{% extends 'base_u2.html' %}
+{% block content %}
+
+
+<h1>Own Wall</h2>
+</center>
+<br>
+
+{% for d in data %}
+<table id="tab">
+<tr><td><h4>You  Shared
+<tr><td>
+<img height=300 src="{{baseUrl}}/{{d.picture}}" WIDTH="550" alt="" />
+<tr><td>
+{{d.msg}}
+</table><br><br>
+
+{% endfor %}
+
+
+{% endblock %}

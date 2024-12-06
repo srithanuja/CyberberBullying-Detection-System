@@ -1,0 +1,7 @@
+
+
+D:
+
+cd D:\Django\SocialApp
+
+python manage.py runserver --nothreading
